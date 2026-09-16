@@ -1,0 +1,62 @@
+True DLMO (first 3 evenings): ['20:57', '20:56', '20:59']
+
+--- Route A ---
+CircadianProfile  tz=Europe/Berlin  route=A  grade=S1 (Sleep + alarm/work/free-day (shift type))
+  behavioural      MSFsc 03:19 (SE 16 min)
+  sleep            n=14 free=4 SJL=1.05 h SRI=90 schedule=regular
+
+Sampling plan: {'assay': 'HairTime', 'prior': 'sleep-based: MSFsc 03:19 - 6 h (SD 1 h, population phase-angle assumption)', 'validated_window_after_dlmo': (9.0, 17.0), 'robust_window': ('08:19', '12:19'), 'recommended_time': '10:19', 'prob_in_window': 1.0, 'note': 'record exact sampling time, timezone and day type; avoid evening and night samples'}
+
+--- Route B ---
+CircadianProfile  tz=Europe/Berlin  route=B  grade=P1 (Single-sample assay with QC)
+  phase anchor     21:25 pDLMO[HairTime]  date=2026-03-10 (evening); sample day type: workday  SD=1.49 h  mode=fixed
+  stability        phase constant over sampling evening 2026-03-10 only
+  observation      pDLMO[HairTime] 21:25 (evening 2026-03-10) SD=1.49 h  [model disagreement 0.30 h added to uncertainty]
+  note             Route B: applying the anchor to other days is an assumption of stability
+
+--- Route C (smoother) ---
+CircadianProfile  tz=Europe/Berlin  route=C  grade=C (Phase observation(s) + sleep (+/- light/activity))
+  phase anchor     21:25 pDLMO[HairTime]  date=2026-03-10 (evening); sample day type: workday  SD=1.49 h  mode=smoother
+  behavioural      MSFsc 03:19 (SE 16 min)
+  phase angle      onset +1.32 h, midsleep +5.17 h, wake +9.02 h (relative to DLMO on the anchor evening)
+  sleep            n=14 free=4 SJL=1.05 h SRI=90 schedule=regular
+  observation      pDLMO[HairTime] 21:25 (evening 2026-03-10) SD=1.49 h  [model disagreement 0.30 h added to uncertainty]
+      date dlmo_clock     sd_h  true
+2026-03-02      21:18 1.533267 20:57
+2026-03-03      21:18 1.518882 20:56
+2026-03-04      21:18 1.506231 20:59
+2026-03-05      21:17 1.494274 20:51
+2026-03-06      21:17 1.482309 21:00
+2026-03-07      21:19 1.471059 21:04
+2026-03-08      21:21 1.458912 21:01
+2026-03-09      21:23 1.444255 21:00
+2026-03-10      21:24 1.426556 20:54
+2026-03-11      21:26 1.445515 20:57
+2026-03-12      21:28 1.461929 20:59
+2026-03-13      21:29 1.476878 21:20
+2026-03-14      21:31 1.492108 21:23
+2026-03-15      21:31 1.509699 21:16
+
+                  datetime  glucose  clock_time_h  asleep  hours_since_wake  prior_sleep_duration_h  crt_phase_h  crt_linear_h  crt_sin
+2026-03-09 09:00:00+01:00   100.66          9.00   False              3.11                    7.73         5.68         29.68     1.00
+2026-03-09 09:15:00+01:00   100.27          9.25   False              3.36                    7.73         5.93         29.93     1.00
+2026-03-09 09:30:00+01:00    99.87          9.50   False              3.61                    7.73         6.18         30.18     1.00
+2026-03-09 09:45:00+01:00    99.44          9.75   False              3.86                    7.73         6.43         30.43     0.99
+2026-03-09 10:00:00+01:00    99.00         10.00   False              4.11                    7.73         6.68         30.68     0.98
+2026-03-09 10:15:00+01:00    98.54         10.25   False              4.36                    7.73         6.93         30.93     0.97
+
+psi diagnostics: {'n': 134, 'psi_sd_h': 0.24433526018009394, 'psi_mean_h': 8.781607488954887, 'separation_supported': False, 'message': 'psi hardly varies: separation of circadian and wake-dependent effects is not supported'}
+
+Wake-anchored (predicted):
+       date day_type clock status
+2026-03-10  workday 08:19     ok
+2026-03-10  workday 13:19     ok
+2026-03-10  workday 18:19     ok
+2026-03-14     free 09:49     ok
+2026-03-14     free 14:49     ok
+2026-03-14     free 19:49     ok
+
+Phase-anchored:
+ anchor_date  offset_h clock lower upper   anchor_source
+ 2026-03-10        10 07:24 04:37 10:12 pDLMO[HairTime]
+ 2026-03-10        16 13:24 10:37 16:12 pDLMO[HairTime]

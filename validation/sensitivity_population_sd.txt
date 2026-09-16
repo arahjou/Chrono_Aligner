@@ -1,0 +1,4 @@
+between-person DLMO SD 0.75 h | MAE population mean 0.67 | HairTime x1 fixed 1.24 | HairTime x2 + sleep smoother 0.86
+between-person DLMO SD  1.0 h | MAE population mean 0.88 | HairTime x1 fixed 1.24 | HairTime x2 + sleep smoother 0.85
+between-person DLMO SD  1.5 h | MAE population mean 1.31 | HairTime x1 fixed 1.24 | HairTime x2 + sleep smoother 0.84
+between-person DLMO SD  2.0 h | MAE population mean 1.73 | HairTime x1 fixed 1.24 | HairTime x2 + sleep smoother 0.84

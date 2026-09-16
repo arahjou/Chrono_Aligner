@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chronoalign"
+version = "0.2.0"
+description = "ChronoAlign: a source-aware, uncertainty-aware circadian reference engine"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "pandas>=1.5", "scipy>=1.8"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

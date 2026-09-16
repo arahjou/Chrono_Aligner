@@ -1,0 +1,18 @@
+                                                                                             MAE_h  P90_abs_err_h  bias_h  mean_sd_h  coverage95  MAE_from_sample_day_h  MAE_shifted_participants_h
+scenario                                   strategy                                                                                                                                                
+entrained (workday/free-day shifts only)   Population mean only (no data; simulator SD 1 h)   0.87           1.72   -0.06       1.00        0.94                   0.88                         NaN
+                                           HairTime x1, fixed (stability assumption)          1.16           2.44   -0.08       1.47        0.97                   1.17                         NaN
+                                           HairTime x1 + sleep, filter (causal)               0.92           2.01   -0.07       2.88        0.99                   1.06                         NaN
+                                           HairTime x1 + sleep, smoother                      1.13           2.35   -0.08       1.47        0.98                   1.12                         NaN
+                                           HairTime x2, fixed pooled                          0.90           1.75    0.16       1.04        0.95                   0.90                         NaN
+                                           HairTime x2 + sleep, smoother                      0.88           1.73    0.15       1.09        0.96                   0.88                         NaN
+                                           Measured DLMO x1, fixed                            0.45           0.91   -0.08       0.50        0.93                   0.45                         NaN
+                                           Measured DLMO x1 + sleep, smoother                 0.45           0.92   -0.08       0.67        0.98                   0.46                         NaN
+30% with a sustained 2-h delay from day 12 Population mean only (no data; simulator SD 1 h)   1.00           2.02   -0.32       1.00        0.89                   1.09                        1.22
+                                           HairTime x1, fixed (stability assumption)          1.28           2.67   -0.34       1.47        0.94                   1.35                        1.50
+                                           HairTime x1 + sleep, filter (causal)               0.99           2.15   -0.26       2.88        0.97                   1.18                        1.11
+                                           HairTime x1 + sleep, smoother                      1.18           2.49   -0.24       1.47        0.96                   1.21                        1.27
+                                           HairTime x2, fixed pooled                          0.99           1.97    0.07       1.04        0.91                   1.02                        1.12
+                                           HairTime x2 + sleep, smoother                      0.91           1.81    0.08       1.10        0.95                   0.92                        0.91
+                                           Measured DLMO x1, fixed                            0.66           1.65   -0.33       0.50        0.80                   0.79                        1.09
+                                           Measured DLMO x1 + sleep, smoother                 0.56           1.21   -0.25       0.67        0.92                   0.63                        0.81
